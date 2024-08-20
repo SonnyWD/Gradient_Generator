@@ -1,0 +1,126 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Roboto, Helvetica, sans-serif;
+  background: #333;
+  padding: clamp(20px, 20vw, 200px) 20px 0;
+}
+.container {
+  max-width: 450px;
+  margin: 0 auto;
+  height: 100%;
+  /* text-align: center; */
+}
+.container-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.container-input input[type="color"] {
+  margin-bottom: 1rem;
+}
+.colorpick-eyedropper-input-trigger {
+  display: none;
+}
+input {
+  min-width: 400px;
+  max-width: 400px;
+  min-height: 50px;
+  border-radius: 10px;
+  border: none;
+  padding: 15px;
+  background-color: transparent;
+}
+#color-one,
+#color-two {
+  visibility: hidden;
+}
+.container-buttons {
+  display: flex;
+  gap: 20px;
+}
+button {
+  min-width: 150px;
+  padding: 15px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid #22222275;
+  background-color: #f1f1f1;
+  font-family: Roboto, Helvetica, sans-serif;
+  box-shadow: 0px 7px 5px 0px #282626a6;
+}
+label[for="color-one"],
+label[for="color-two"] {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  min-width: 400px;
+  max-width: 400px;
+  min-height: 50px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  padding: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.781);
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+label[for="color-one"] {
+  background-color: #60cb59;
+}
+label[for="color-two"] {
+  background-color: #00c683;
+}
+label[for="range"].orientation {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-top: 1rem;
+}
+button.paste {
+  position: relative;
+}
+button.paste::after {
+  content: "Copié !";
+  display: block;
+  z-index: 1;
+  position: absolute;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 5px;
+  background: #f1f1f1;
+  bottom: -85%;
+  left: 50%;
+  transform: translate(-50%, 30px);
+  white-space: nowrap;
+  opacity: 0;
+}
+button.paste.active::after {
+  animation: fade-out 1s ease-out forwards;
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+}

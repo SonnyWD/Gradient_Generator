@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Couleurs fun JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-input">
+        <label for="color-one" class="labelColor"></label>
+        <input type="color" name="" id="color-one" value="#60cb59" />
+      </div>
+      <div class="container-input">
+        <label for="color-two" class="labelColor"></label>
+        <input type="color" name="" id="color-two" value="#00c683" />
+      </div>
+      <div class="container-input">
+        <label for="range" class="orientation"></label>
+        <input
+          type="range"
+          name=""
+          id="range"
+          step="1"
+          min="0"
+          max="360"
+          value="180"
+        />
+      </div>
+      <div class="container-buttons">
+        <button class="paste" type="button">Copier</button>
+        <button class="random" type="button">Random</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
